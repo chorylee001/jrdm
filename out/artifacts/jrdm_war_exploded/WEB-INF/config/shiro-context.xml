@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+	   http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd"
+	default-lazy-init="true">
+	
+	<!--<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+		<property name="securityManager" ref="securityManager" />
+		<property name="loginUrl" value="/login.jspx" />
+		<property name="successUrl" value="/" />
+		<property name="filters">
+			<util:map>
+				<entry key="authc" value-ref="authcFilter" />
+				<entry key="user" value-ref="userFilter" />
+				<entry key="logout" value-ref="logoutFilter" />
+			</util:map>
+		</property>
+		&lt;!&ndash;anon匿名 authc登录认证  user用户已登录 logout退出filter&ndash;&gt;
+		<property name="filterChainDefinitions">
+			<value>
+				*.jspx = anon
+				*.jhtml = anon
+				/sysadmin/whale/cloud_sync_*.do = anon
+				/member/forgot_password.jspx = anon
+				/member/password_reset.jspx = anon
+				/login.jspx = authc
+				/logout.jspx = logout
+				/member/** = user
+				/sysadmin/whale/login.do = authc
+				/sysadmin/whale/logout.do = logout
+				/sysadmin/whale/** =user
+			</value>
+		</property>
+	</bean>-->
+	<!-- Shiro Filter -->
+	
+	<!-- Enable Shiro Annotations for Spring-configured beans.  Only run after -->
+	<!-- the lifecycleBeanProcessor has run: -->
+	<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor" />
+</beans>
